@@ -30,7 +30,7 @@ if __name__ == '__main__':
         if a == 'change':
             klass = input("Класс, который изменяем: ")
             kol = int(input("Новое количество учеников: "))
-            school[klass] = kol
+            school.update({klass: kol})
 
         elif a == 'new':
             name = input("Введите название класса: ")
@@ -40,13 +40,16 @@ if __name__ == '__main__':
         elif a == 'destroy':
             name = input("Введите название класса: ")
             del school[name]
+
         elif a == 'stop':
             break
+
         else:
             print("Такой команды нет", file=sys.stderr)
 
     schet = 0
     for i in school:
         schet += school[i]
+
     print(school)
     print(f"В школе {schet} учеников")

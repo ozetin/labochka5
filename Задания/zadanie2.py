@@ -23,7 +23,7 @@ if __name__ == '__main__':
             }
             marshruti.append(marshrut)
 
-            if len(marshruti) > 1:
+            if marshruti:
                 marshruti.sort(key=lambda x: x.get("number",""))
         elif a == "end":
             break
